@@ -61,6 +61,10 @@ public class OI {
     return driverJoystick.getRawAxis(69); // lmao
   }
 
+  public double getOperatorJoystick() {
+    return operatorJoystick.getRawAxis(0);
+  }
+
   public void init(Robot robot) {
 
   }

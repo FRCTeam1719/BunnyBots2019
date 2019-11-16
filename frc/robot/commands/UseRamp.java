@@ -29,7 +29,7 @@ public class UseRamp extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    double amt = Robot.m_oi.getDriverLeftX();
+    double amt = Robot.m_oi.getOperatorJoystick();
     ampSubsystem.moveRamp(amt);
 
   }
