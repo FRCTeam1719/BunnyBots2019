@@ -58,6 +58,6 @@ public class OI {
   }
 
   public double getDriverRightX() {
-    return driverJoystick.getRawAxis(69); //lmao
+    return driverJoystick.getRawAxis(0);
   }
 }
