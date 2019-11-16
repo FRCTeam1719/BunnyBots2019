@@ -17,10 +17,13 @@ public class Drive extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
 
-  SparkMax
+  SparkMax leftController;
+  SparkMax rightController;
 
-  public Drive() {
+  public Drive(SparkMax _leftController, SparkMax _rightController) {
     super("Drive");
+    leftController = _leftController;
+    rightController = _rightController;
   }
 
   @Override
@@ -28,7 +31,8 @@ public class Drive extends Subsystem {
     setDefaultCommand(new UseDrive(this));
   }
 
-    public void drive(double left, double right) {
-      
-    }
+  public void drive(double left, double right) {
+    leftController.set(left);
+    rightController.set(right);
+  }
 }
