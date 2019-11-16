@@ -8,6 +8,7 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import frc.robot.Robot;
 import frc.robot.subsystems.Drive;
 
 public class UseDrive extends Command {
@@ -29,7 +30,12 @@ public class UseDrive extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    
+    double leftVal = Robot.m_oi.getDriverLeftY();
+    leftVal = Math.pow(leftVal, 3);
+    if (leftVal <.005 && leftVal > -.005)
+      leftVal = 0;
+
+    driveSub.drive(leftVal, 0);
   }
 
   // Make this return true when this Command no longer needs to run execute()

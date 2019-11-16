@@ -17,6 +17,8 @@ public class Drive extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
 
+  SparkMax
+
   public Drive() {
     super("Drive");
   }
@@ -26,7 +28,7 @@ public class Drive extends Subsystem {
     setDefaultCommand(new UseDrive(this));
   }
 
-    public void drive(float left, float right) {
+    public void drive(double left, double right) {
       
     }
 }

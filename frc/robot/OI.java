@@ -45,7 +45,19 @@ public class OI {
   Joystick driverJoystick = new Joystick(0);
   Joystick operatorJoystick = new Joystick(1);
 
-  float getDriverLeftY() {
-    return (float) driverJoystick.getRawAxis(0);
+  public double getDriverLeftY() {
+    return driverJoystick.getRawAxis(0);
+  }
+
+  public double getDriverLeftX() {
+    return driverJoystick.getRawAxis(1);
+  }
+
+  public double getDriverRightY() {
+    return driverJoystick.getRawAxis(2);
+  }
+
+  public double getDriverRightX() {
+    return driverJoystick.getRawAxis(69); //lmao
   }
 }
