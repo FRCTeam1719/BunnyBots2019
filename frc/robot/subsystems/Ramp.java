@@ -17,6 +17,16 @@ public class Ramp extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
 
+  SparkMax ramp;
+
+  public Ramp(CANSparkMax _ramp) {
+    ramp = _ramp;
+  }
+
+  public void moveRamp(double speed) {
+    ramp.set(speed);
+  }
+
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.

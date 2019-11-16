@@ -12,13 +12,13 @@ import frc.robot.Robot;
 import frc.robot.subsystems.Ramp;
 
 public class UseRamp extends Command {
-  Ramp rampSubsysem;
+  Ramp rampSubsystem;
 
   public UseRamp(Ramp rampSubsysem) {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
 
-    this.rampSubsysem = rampSubsysem;
+    this.rampSubsystem = rampSubsysem;
   }
 
   // Called just before this Command runs the first time
@@ -29,7 +29,9 @@ public class UseRamp extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    float amt = Robot.m_oi.getDriverLeftX();
+    double amt = Robot.m_oi.getDriverLeftX();
+    ampSubsystem.moveRamp(amt);
+
   }
 
   // Make this return true when this Command no longer needs to run execute()

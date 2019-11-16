@@ -7,6 +7,9 @@
 
 package frc.robot;
 
+import com.revrobotics.CANSparkMax;
+import com.revrobotics.CANSparkMaxLowLevel.MotorType;
+
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
  * to a variable name. This provides flexibility changing wiring, makes checking
@@ -26,4 +29,6 @@ public class RobotMap {
 
   public static final SparkMax leftDrive = new Spark(0);
   public static final SparkMax rightDrive = new Spark(1);
+
+  public static final SparkMax ramp = new Spark(2);
 }

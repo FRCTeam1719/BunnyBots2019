@@ -17,10 +17,10 @@ public class Drive extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
 
-  SparkMax leftController;
-  SparkMax rightController;
+  CANSparkMax leftController;
+  CANSparkMax rightController;
 
-  public Drive(SparkMax _leftController, SparkMax _rightController) {
+  public Drive(CANSparkMax _leftController, CANSparkMax _rightController) {
     super("Drive");
     leftController = _leftController;
     rightController = _rightController;
