@@ -7,6 +7,7 @@
 
 package frc.robot.subsystems;
 
+import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.commands.UseRamp;
 
@@ -17,9 +18,9 @@ public class Ramp extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
 
-  SparkMax ramp;
+  Spark ramp;
 
-  public Ramp(CANSparkMax _ramp) {
+  public Ramp(Spark _ramp) {
     ramp = _ramp;
   }
 

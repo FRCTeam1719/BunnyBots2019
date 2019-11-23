@@ -10,6 +10,8 @@ package frc.robot;
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
+import edu.wpi.first.wpilibj.Spark;
+
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
  * to a variable name. This provides flexibility changing wiring, makes checking
@@ -27,8 +29,8 @@ public class RobotMap {
   // public static int rangefinderPort = 1;
   // public static int rangefinderModule = 1;
 
-  public static final SparkMax leftDrive = new Spark(0);
-  public static final SparkMax rightDrive = new Spark(1);
+  public static final CANSparkMax leftDrive = new CANSparkMax(0, MotorType.kBrushless);
+  public static final CANSparkMax rightDrive = new CANSparkMax(1, MotorType.kBrushless);
 
-  public static final SparkMax ramp = new Spark(2);
+  public static final Spark ramp = new Spark(2);
 }

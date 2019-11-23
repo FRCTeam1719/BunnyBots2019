@@ -30,7 +30,7 @@ public class UseRamp extends Command {
   @Override
   protected void execute() {
     double amt = Robot.m_oi.getOperatorJoystick();
-    ampSubsystem.moveRamp(amt);
+    rampSubsystem.moveRamp(amt);
 
   }
 
