@@ -16,6 +16,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import frc.robot.commands.NeutralAuton;
 import frc.robot.subsystems.Drive;
 import frc.robot.subsystems.Ramp;
 
@@ -41,7 +42,7 @@ public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
     m_oi = new OI();
-    drive = new Drive(RobotMap.leftDrive, RobotMap.rightDrive);
+    drive = new Drive(RobotMap.leftDrive1, RobotMap.leftDrive2, RobotMap.rightDrive1, RobotMap.rightDrive2);
     ramp = new Ramp(RobotMap.ramp);
     // chooser.addOption("My Auto", new MyAutoCommand());
     SmartDashboard.putData("Auto mode", m_chooser);
@@ -88,7 +89,7 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void autonomousInit() {
-    m_autonomousCommand = m_chooser.getSelected();
+    m_autonomousCommand = new NeutralAuton(drive);
 
     /*
      * String autoSelected = SmartDashboard.getString("Auto Selector", "Default");

@@ -8,14 +8,19 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-import frc.robot.Robot;
 import frc.robot.subsystems.Drive;
 
-public class UseDrive extends Command {
+public class NeutralAuton extends Command {
   Drive driveSub;
 
-  public UseDrive(Drive driveSub) {
-    super("UseDrive");
+  final double SPEED = 0.8;
+  final double WHEEL_RADIUS_CM = 15.5 / 2;
+  final double DISTANCE_CM = 487.68;
+
+  double distance;
+
+  public NeutralAuton(Drive driveSub) {
+    // Use requires() here to declare subsystem dependencies
 
     this.driveSub = driveSub;
 
@@ -30,20 +35,12 @@ public class UseDrive extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    
+    distance += (driveSub.getLeftTurns() + driveSub.getRightTurns()) / 2;
 
-    double leftVal = Robot.m_oi.getDriverLeftY();
-    leftVal = Math.pow(leftVal, 3);
-    if (leftVal < .005 && leftVal > -.005)
-      leftVal = 0;
-
-    double rightVal = Robot.m_oi.getDriverRightY();
-    rightVal = Math.pow(rightVal, 3);
-    if (rightVal < .005 && rightVal > -.005)
-      rightVal = 0;
-
-
-    driveSub.drive(leftVal, rightVal);
+    if (distance * 2 * Math.PI * WHEEL_RADIUS_CM < DISTANCE_CM)
+    {
+      driveSub.drive(SPEED, SPEED);
+    }
   }
 
   // Make this return true when this Command no longer needs to run execute()
