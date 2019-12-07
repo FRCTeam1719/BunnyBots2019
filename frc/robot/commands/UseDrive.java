@@ -30,8 +30,6 @@ public class UseDrive extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    
-
     double leftVal = Robot.m_oi.getDriverLeftY();
     leftVal = Math.pow(leftVal, 3);
     if (leftVal < .005 && leftVal > -.005)
@@ -41,7 +39,6 @@ public class UseDrive extends Command {
     rightVal = Math.pow(rightVal, 3);
     if (rightVal < .005 && rightVal > -.005)
       rightVal = 0;
-
 
     driveSub.drive(leftVal, rightVal);
   }

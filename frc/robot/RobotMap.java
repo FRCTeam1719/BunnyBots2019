@@ -29,10 +29,10 @@ public class RobotMap {
   // public static int rangefinderPort = 1;
   // public static int rangefinderModule = 1;
 
-  public static final CANSparkMax leftDrive1 = new CANSparkMax(0, MotorType.kBrushless);
-  public static final CANSparkMax leftDrive2 = new CANSparkMax(1, MotorType.kBrushless);
-  public static final CANSparkMax rightDrive1 = new CANSparkMax(2, MotorType.kBrushless);
-  public static final CANSparkMax rightDrive2 = new CANSparkMax(3, MotorType.kBrushless);
+  public static final CANSparkMax leftDrive1 = new CANSparkMax(1, MotorType.kBrushless);
+  public static final CANSparkMax leftDrive2 = new CANSparkMax(2, MotorType.kBrushless);
+  public static final CANSparkMax rightDrive1 = new CANSparkMax(3, MotorType.kBrushless);
+  public static final CANSparkMax rightDrive2 = new CANSparkMax(4, MotorType.kBrushless);
 
   public static final Spark ramp = new Spark(0);
 }
