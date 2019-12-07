@@ -46,23 +46,23 @@ public class OI {
   Joystick operatorJoystick = new Joystick(1);
 
   public double getDriverLeftY() {
-    return driverJoystick.getRawAxis(0);
-  }
-
-  public double getDriverLeftX() {
     return driverJoystick.getRawAxis(1);
   }
 
+  public double getDriverLeftX() {
+    return driverJoystick.getRawAxis(0);
+  }
+
   public double getDriverRightY() {
-    return driverJoystick.getRawAxis(2);
+    return driverJoystick.getRawAxis(5);
   }
 
   public double getDriverRightX() {
-    return driverJoystick.getRawAxis(69); // lmao
+    return driverJoystick.getRawAxis(4);
   }
 
-  public double getOperatorJoystick() {
-    return operatorJoystick.getRawAxis(0);
+  public double getOperatorRightY() {
+    return operatorJoystick.getRawAxis(5);
   }
 
   public void init(Robot robot) {
