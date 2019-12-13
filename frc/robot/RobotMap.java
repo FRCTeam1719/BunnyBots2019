@@ -34,5 +34,7 @@ public class RobotMap {
   public static final CANSparkMax rightDrive1 = new CANSparkMax(3, MotorType.kBrushless);
   public static final CANSparkMax rightDrive2 = new CANSparkMax(4, MotorType.kBrushless);
 
+  public static final CANSparkMax backStop = new CANSparkMax(5, MotorType.kBrushless);
+
   public static final Spark ramp = new Spark(0);
 }

@@ -16,7 +16,10 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import frc.robot.commands.CloseBackStop;
 import frc.robot.commands.NeutralAuton;
+import frc.robot.commands.OpenBackStop;
+import frc.robot.subsystems.BackStop;
 import frc.robot.subsystems.Drive;
 import frc.robot.subsystems.Ramp;
 
@@ -31,6 +34,11 @@ public class Robot extends TimedRobot {
   public static OI m_oi;
   public static Drive drive;
   public static Ramp ramp;
+  public static BackStop backStop;
+
+  public static final double BACK_STOP_SPIN_SPEED = 0.03;
+
+  boolean rampUp = false;
 
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
@@ -128,6 +136,14 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void teleopPeriodic() {
+    if (m_oi.operatorJoystick.getRawButtonPressed(m_oi.TOGGLE_RAMP_BTN)) {
+      if (rampUp) {
+        Scheduler.getInstance().add(new CloseBackStop(backStop));
+      } else {
+        Scheduler.getInstance().add(new OpenBackStop(backStop));
+      }
+    }
+
     Scheduler.getInstance().run();
   }
 

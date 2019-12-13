@@ -45,6 +45,8 @@ public class OI {
   Joystick driverJoystick = new Joystick(0);
   Joystick operatorJoystick = new Joystick(1);
 
+  final int TOGGLE_RAMP_BTN = 3;
+
   public double getDriverLeftY() {
     return driverJoystick.getRawAxis(1);
   }
@@ -66,6 +68,6 @@ public class OI {
   }
 
   public void init(Robot robot) {
-
+    
   }
 }
