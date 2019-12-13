@@ -31,12 +31,12 @@ public class UseDrive extends Command {
   @Override
   protected void execute() {
     double leftVal = Robot.m_oi.getDriverLeftY();
-    leftVal = Math.pow(leftVal, 3);
+    leftVal = Math.pow(leftVal, 2);
     if (leftVal < .005 && leftVal > -.005)
       leftVal = 0;
 
     double rightVal = Robot.m_oi.getDriverRightY();
-    rightVal = Math.pow(rightVal, 3);
+    rightVal = Math.pow(rightVal, 2);
     if (rightVal < .005 && rightVal > -.005)
       rightVal = 0;
 

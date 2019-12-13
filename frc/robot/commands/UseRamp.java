@@ -19,6 +19,8 @@ public class UseRamp extends Command {
     // eg. requires(chassis);
 
     this.rampSubsystem = rampSubsysem;
+    requires(rampSubsystem);
+
   }
 
   // Called just before this Command runs the first time
