@@ -25,13 +25,7 @@ public class Ramp extends Subsystem {
   }
 
   public void moveRamp(double speed) {
-    if (speed > 0) {
-      ramp.set(1);
-    }
-
-    if (speed < 0) {
-      ramp.set(-1);
-    }
+    ramp.set(speed);
   }
 
   @Override

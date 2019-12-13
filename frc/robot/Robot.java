@@ -52,6 +52,7 @@ public class Robot extends TimedRobot {
     m_oi = new OI();
     drive = new Drive(RobotMap.leftDrive1, RobotMap.leftDrive2, RobotMap.rightDrive1, RobotMap.rightDrive2);
     ramp = new Ramp(RobotMap.ramp);
+    backStop = new BackStop(RobotMap.backStop);
     // chooser.addOption("My Auto", new MyAutoCommand());
     SmartDashboard.putData("Auto mode", m_chooser);
   }

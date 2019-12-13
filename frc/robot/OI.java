@@ -67,7 +67,11 @@ public class OI {
     return operatorJoystick.getRawAxis(5);
   }
 
+  public double getOperatorLeftY() {
+    return operatorJoystick.getRawAxis(1);
+  }
+
   public void init(Robot robot) {
-    
+
   }
 }
