@@ -35,7 +35,7 @@ public class BackStop extends Subsystem {
     else if ((speed < 0) && (speed < (limit * -1)))
       backStopController.set(limit * -1);
     else { // if speed is too low
-      if ((speed < 0.008) && (speed > -.008))
+      if ((speed < 0.07) && (speed > -.07))
         backStopController.set(0);
       else
         backStopController.set(speed);

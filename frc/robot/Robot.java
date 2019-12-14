@@ -98,7 +98,8 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void autonomousInit() {
-    m_autonomousCommand = new NeutralAuton(drive);
+    ramp.moveRamp(-1);
+   // m_autonomousCommand = new NeutralAuton(drive);
 
     /*
      * String autoSelected = SmartDashboard.getString("Auto Selector", "Default");
@@ -108,9 +109,9 @@ public class Robot extends TimedRobot {
      */
 
     // schedule the autonomous command (example)
-    if (m_autonomousCommand != null) {
-      m_autonomousCommand.start();
-    }
+  //  if (m_autonomousCommand != null) {
+   //   m_autonomousCommand.start();
+   // }
   }
 
   /**
@@ -119,6 +120,7 @@ public class Robot extends TimedRobot {
   @Override
   public void autonomousPeriodic() {
     Scheduler.getInstance().run();
+    ramp.moveRamp(-1);
   }
 
   @Override
